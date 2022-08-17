@@ -43,13 +43,4 @@ jobs:
         with:
           dir: '.'
   
-  Deploy_production:
-    runs-on: ubuntu-latest
-    needs: [Test,dependency_check]
-    steps:
-      - uses: actions/checkout@v2
-      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
-        with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY_QA}}
-          heroku_app_name: "tp1-crud-qa" #Must be unique in Heroku
-          heroku_email: "carlosdemarino1989@gmail.com"
+  
